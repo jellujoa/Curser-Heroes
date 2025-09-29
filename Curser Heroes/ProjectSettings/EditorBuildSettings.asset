@@ -5,13 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/02. Scenes/TitleSceneTest.unity
     guid: 708754d490eeab44eabdac1e90e53f90
-  - enabled: 1
+  - enabled: 0
     path: Assets/98. CreatersScenes/JW_StageSelectUI.unity
     guid: d08b655f0a402a846b0de7606c30a278
   - enabled: 1
     path: Assets/98. CreatersScenes/JW_EquipPartner.unity
     guid: 31af7c17bddb57b499ab66909b6a518f
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: a8229fa37f04fef45b2fce069b8575e0, type: 2}

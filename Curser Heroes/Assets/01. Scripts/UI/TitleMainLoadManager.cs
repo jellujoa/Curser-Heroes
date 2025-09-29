@@ -1,5 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
 public class TitleMainLoadManager : MonoBehaviour
@@ -31,8 +34,9 @@ public class TitleMainLoadManager : MonoBehaviour
     {
         yield return StartCoroutine(FadeOut());
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("JW_StageSelectUI");
-        while(!asyncLoad.isDone)
+        //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("JW_StageSelectUI");
+        AsyncOperationHandle<SceneInstance> asyncLoad = Addressables.LoadSceneAsync("Assets/98. CreatersScenes/JW_StageSelectUI.unity");// 어드레서블 적용
+        while(!asyncLoad.IsDone)
         {
             yield return null;
         }
