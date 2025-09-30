@@ -3,6 +3,9 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 public class StageSelectUI : MonoBehaviour
 {
@@ -150,8 +153,9 @@ public class StageSelectUI : MonoBehaviour
         IEnumerator LoadSceneAndStartUI()
         {
                 //AsyncOperation async = SceneManager.LoadSceneAsync("BattleTest");
-                AsyncOperation async = SceneManager.LoadSceneAsync("JW_EquipPartner");
-                while (!async.isDone) yield return null;
+                //AsyncOperation async = SceneManager.LoadSceneAsync("JW_EquipPartner");
+                AsyncOperationHandle<SceneInstance> asyncLoad = Addressables.LoadSceneAsync("Assets/98. CreatersScenes/JW_EquipPartner.unity");// 어드레서블 적용
+                while (!asyncLoad.IsDone) yield return null;
                 
                 yield return new WaitUntil(() => UIManager.Instance != null);
         }

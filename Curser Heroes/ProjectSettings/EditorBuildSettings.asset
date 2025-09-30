@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/98. CreatersScenes/JW_StageSelectUI.unity
     guid: d08b655f0a402a846b0de7606c30a278
-  - enabled: 1
+  - enabled: 0
     path: Assets/98. CreatersScenes/JW_EquipPartner.unity
     guid: 31af7c17bddb57b499ab66909b6a518f
   m_configObjects:

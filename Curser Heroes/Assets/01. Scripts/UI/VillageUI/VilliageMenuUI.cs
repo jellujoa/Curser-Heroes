@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 public class VilliageMenuUI : MonoBehaviour
 {
@@ -26,8 +29,8 @@ public class VilliageMenuUI : MonoBehaviour
 
     public void ClickTitleButton()
     {
-        SceneManager.LoadScene("TitleSceneTest");
-        Debug.Log("타이틀화면으로 돌아가기");   // 추후 타이틀씬으로 변경
+        Addressables.LoadSceneAsync("Assets/02. Scenes/TitleSceneTest.unity");
+        //SceneManager.LoadScene("TitleSceneTest");
     }
     
     
