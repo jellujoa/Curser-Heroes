@@ -18,7 +18,8 @@ public class FireballSkill : MonoBehaviour
         this.damage = damage;
         this.direction = dir.normalized;
         Destroy(gameObject, 5f); // 수명 제한
-
+        transform.rotation = Quaternion.LookRotation(direction); // 투사체 방향
+        
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {

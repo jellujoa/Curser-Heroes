@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using TMPro;
 public class UIManager : MonoBehaviour
@@ -236,7 +239,8 @@ public class UIManager : MonoBehaviour
     private void ReturnToTown()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("JW_StageSelectUI");
+        AsyncOperationHandle<SceneInstance> asyncLoad = Addressables.LoadSceneAsync("Assets/98. CreatersScenes/JW_StageSelectUI.unity");// 어드레서블 적용
+     
     }
 
     private void RestartGame()
