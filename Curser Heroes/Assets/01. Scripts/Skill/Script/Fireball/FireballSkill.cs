@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FireballSkill : MonoBehaviour
@@ -18,7 +19,8 @@ public class FireballSkill : MonoBehaviour
         this.damage = damage;
         this.direction = dir.normalized;
         Destroy(gameObject, 5f); // 수명 제한
-        transform.rotation = Quaternion.LookRotation(direction); // 투사체 방향
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0,0,angle); // 투사체 방향
         
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)

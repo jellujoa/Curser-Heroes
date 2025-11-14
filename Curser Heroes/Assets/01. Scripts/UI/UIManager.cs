@@ -247,6 +247,8 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         // 현재 씬을 다시 로드하여 게임을 처음부터 시작
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        AsyncOperationHandle<SceneInstance> asyncLoad = Addressables.LoadSceneAsync("Assets/98. CreatersScenes/JW_EquipPartner.unity");// 어드레서블 적용
+
     }
 }
